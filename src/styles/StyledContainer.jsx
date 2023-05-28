@@ -5,8 +5,24 @@ const Container = styled.div`
   margin: 0 auto;
 `;
 
-function StyledContainer({ children }) {
-  return <Container>{children}</Container>;
+const GridContainer = styled(Container)`
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+`;
+
+function StyledContainer({ children, parentGrid }) {
+  let container;
+
+  if (parentGrid) {
+    container = <GridContainer>{children}</GridContainer>;
+  } else {
+    container = <Container>{children}</Container>;
+  }
+
+  return container;
 }
 
 export default StyledContainer;

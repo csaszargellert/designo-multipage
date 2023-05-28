@@ -11,6 +11,7 @@ const GlobalStyles = createGlobalStyle`
     --dark-grey: #333136;
     --light-grey: #F1F3F5;
     --width: 110rem;
+    --border-radius: 1.2rem;
   }
 
   *,

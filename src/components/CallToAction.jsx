@@ -11,15 +11,13 @@ const CTASection = styled.section`
   background-image: url("/assets/shared/desktop/bg-pattern-call-to-action.svg");
   background-repeat: no-repeat;
   background-position: center right;
+  border-radius: var(--border-radius);
+
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+
   width: var(--width);
-  border-radius: 1.2rem;
-
-  grid-column: 1;
-  grid-row: 1;
-  z-index: 1;
-  align-self: center;
-
-  transform: translate(20%, -95%);
+  transform: translate(19%, -95%);
 
   h3 {
     font-weight: 500;

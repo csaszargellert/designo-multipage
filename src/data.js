@@ -1,9 +1,32 @@
-import { useParams } from "react-router-dom";
-
-const designData = [
+export const featuresData = [
   {
     id: 1,
-    name: "web design",
+    image: "/assets/home/desktop/illustration-passionate.svg",
+    title: "passionate",
+    text: "Each project starts with an in-depth brand research to ensure we only create products that serve a purpose. We merge art, design, and technology into exciting new solutions.",
+  },
+  {
+    id: 2,
+    image: "/assets/home/desktop/illustration-resourceful.svg",
+    title: "resourceful",
+    text: "Everything that we do has a strategic purpose. We use an agile approach in all of our projects and value customer collaboration. It guarantees superior results that fulfill our clients’ needs.",
+  },
+  {
+    id: 3,
+    image: "/assets/home/desktop/illustration-friendly.svg",
+    title: "friendly",
+    text: "We are a group of enthusiastic folks who know how to put people first. Our success depends on our customers, and we strive to give them the best experience a company can provide.",
+  },
+];
+
+export const designData = [
+  {
+    id: 1,
+    name: "web-design",
+    image: {
+      small: "/assets/home/desktop/image-web-design-small.jpg",
+      large: "/assets/home/desktop/image-web-design-large.jpg",
+    },
     title:
       "We build websites that serve as powerful marketing tools and bring memorable brand experiences.",
     projects: [
@@ -47,7 +70,11 @@ const designData = [
   },
   {
     id: 2,
-    name: "app design",
+    name: "app-design",
+    image: {
+      small: "/assets/home/desktop/image-app-design.jpg",
+      large: "",
+    },
     title:
       "Our mobile designs bring intuitive digital solutions to your customers right at their fingertips.",
     projects: [
@@ -85,7 +112,11 @@ const designData = [
   },
   {
     id: 3,
-    name: "graphic design",
+    name: "graphic-design",
+    image: {
+      small: "/assets/home/desktop/image-graphic-design.jpg",
+      large: "",
+    },
     title:
       "We deliver eye-catching branding materials that are tailored to meet your business objectives.",
     projects: [
@@ -110,13 +141,3 @@ const designData = [
     ],
   },
 ];
-
-function Design() {
-  const { designId } = useParams();
-
-  console.log(designId);
-
-  return <div>Design</div>;
-}
-
-export default Design;

@@ -6,8 +6,9 @@ const StyledFooter = styled.footer`
   padding: 14.4rem 0 7.2rem;
   background-color: var(--black);
   color: var(--white);
-  grid-column: 1;
-  grid-row: 1;
+
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
 `;
 
 const ContactContainer = styled.div`

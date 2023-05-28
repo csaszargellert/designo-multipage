@@ -6,7 +6,8 @@ import ErrorPage from "./pages/Error.jsx";
 import About from "./pages/About.jsx";
 import Locations from "./pages/Locations.jsx";
 import Contact from "./pages/Contact.jsx";
-import Design from "./pages/Design.jsx";
+import DesignPage from "./pages/DesignPage.jsx";
+import Home, { loader as HomeLoader } from "./pages/Home.jsx";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -16,6 +17,11 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
+      {
+        path: "/",
+        element: <Home />,
+        loader: HomeLoader,
+      },
       {
         path: "/about",
         element: <About />,
@@ -30,7 +36,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/design/:designId",
-        element: <Design />,
+        element: <DesignPage />,
       },
     ],
   },
