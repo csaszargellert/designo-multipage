@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import CallToAction from "./components/CallToAction";
 
 import { Outlet } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const Div = styled.div`
   display: grid;
@@ -14,16 +15,25 @@ const Div = styled.div`
 `;
 
 function App() {
+  const location = useLocation();
+  const page = location.pathname.slice(1);
+
   return (
     <React.Fragment>
       <Header />
       <main>
         <Outlet />
       </main>
-      <Div>
-        <CallToAction />
-        <Footer />
-      </Div>
+      {page === "contact" ? (
+        <Div>
+          <Footer contactPage />
+        </Div>
+      ) : (
+        <Div>
+          <CallToAction />
+          <Footer />
+        </Div>
+      )}
     </React.Fragment>
   );
 }

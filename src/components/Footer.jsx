@@ -3,7 +3,7 @@ import Header from "./Header";
 import StyledContainer from "../styles/StyledContainer";
 
 const StyledFooter = styled.footer`
-  padding: 14.4rem 0 7.2rem;
+  padding: ${(props) => (props.$contactPage ? "7.2rem 0" : "14.4rem 0 7.2rem")};
   background-color: var(--black);
   color: var(--white);
 
@@ -47,9 +47,9 @@ const Icon = styled.svg`
   }
 `;
 
-function Footer() {
+function Footer({ contactPage }) {
   return (
-    <StyledFooter>
+    <StyledFooter $contactPage={contactPage}>
       <StyledContainer>
         <Header footer={true} />
         <ContactContainer>
