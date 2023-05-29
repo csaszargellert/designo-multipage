@@ -65,35 +65,35 @@ function Footer() {
           </div>
           <SocialMediaList>
             <li>
-              <a href="https://facebook.com">
+              <a href="https://facebook.com" target="_blank" rel="noreferrer">
                 <Icon>
                   <use xlinkHref="/assets/symbol-defs.svg#icon-facebook2"></use>
                 </Icon>
               </a>
             </li>
             <li>
-              <a href="https://youtube.com">
+              <a href="https://youtube.com" target="_blank" rel="noreferrer">
                 <Icon>
                   <use xlinkHref="/assets/symbol-defs.svg#icon-youtube"></use>
                 </Icon>
               </a>
             </li>
             <li>
-              <a href="https://twitter.com">
+              <a href="https://twitter.com" target="_blank" rel="noreferrer">
                 <Icon>
                   <use xlinkHref="/assets/symbol-defs.svg#icon-twitter"></use>
                 </Icon>
               </a>
             </li>
             <li>
-              <a href="https://pinterest.com">
+              <a href="https://pinterest.com" target="_blank" rel="noreferrer">
                 <Icon>
                   <use xlinkHref="/assets/symbol-defs.svg#icon-pinterest"></use>
                 </Icon>
               </a>
             </li>
             <li>
-              <a href="https://instagram.com">
+              <a href="https://instagram.com" target="_blank" rel="noreferrer">
                 <Icon>
                   <use xlinkHref="/assets/symbol-defs.svg#icon-instagram"></use>
                 </Icon>

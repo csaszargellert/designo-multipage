@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import { designData } from "../data";
 import Designs from "../components/design-section/Designs";
+import DesignHero from "../components/hero/DesignHero";
+import Projects from "../components/projects/Projects";
 
 function DesignPage() {
   const { designId } = useParams();
@@ -20,7 +22,15 @@ function DesignPage() {
     }
   })[0];
 
-  return <Designs designData={designDataToPassOn} page="design" />;
+  const { name, title, projects } = designToRender;
+
+  return (
+    <>
+      <DesignHero name={name} title={title} />
+      <Projects projects={projects} />
+      <Designs designData={designDataToPassOn} page="design" />;
+    </>
+  );
 }
 
 export default DesignPage;
