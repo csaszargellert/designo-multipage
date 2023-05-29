@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import StyledContainer from "../../styles/StyledContainer";
+import ContactForm from "../forms/ContactForm";
 
 const Hero = styled.section`
   margin-bottom: 16rem;
@@ -39,6 +40,7 @@ function ContactHero() {
             users, drop us a line.
           </p>
         </div>
+        <ContactForm />
       </Hero>
     </StyledContainer>
   );
