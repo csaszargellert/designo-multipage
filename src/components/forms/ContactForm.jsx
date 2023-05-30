@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import useInputHandler from "../../custom-hooks/useInputHandler";
 import {
   emailValidator,
@@ -5,7 +6,38 @@ import {
   phoneValidator,
   messageValidator,
 } from "./formValidator";
-// import styled from "styled-components";
+import InputElement from "./InputElement";
+import styled from "styled-components";
+
+const ButtonController = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`;
+
+const Button = styled.button`
+  border: none;
+  outline: none;
+  background: none;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--dark-grey);
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+
+  display: inline-block;
+  padding: 1.6rem 4.8rem;
+
+  transition: all 150ms ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--light-peach);
+    color: var(--white);
+  }
+`;
 
 function ContactForm() {
   const [email, emailError, emailIsTouched, handleEmailInput] =
@@ -19,6 +51,69 @@ function ContactForm() {
 
   const [message, messageError, messageIsTouched, handleMessageInput] =
     useInputHandler(messageValidator);
+
+  const inputFields = useMemo(
+    () => [
+      {
+        id: 1,
+        type: "text",
+        name: "name",
+        placeholder: "name",
+        value: name,
+        error: nameError,
+        isTouched: nameIsTouched,
+        handleInput: handleNameInput,
+      },
+      {
+        id: 2,
+        type: "email",
+        name: "email",
+        placeholder: "email address",
+        value: email,
+        error: emailError,
+        isTouched: emailIsTouched,
+        handleInput: handleEmailInput,
+      },
+      {
+        id: 3,
+        type: "tel",
+        name: "phone",
+        placeholder: "phone",
+        value: phone,
+        error: phoneError,
+        isTouched: phoneIsTouched,
+        handleInput: handlePhoneInput,
+      },
+      {
+        id: 4,
+        type: "textarea",
+        name: "message",
+        placeholder: "your message",
+        value: message,
+        error: messageError,
+        isTouched: messageIsTouched,
+        handleInput: handleMessageInput,
+      },
+    ],
+    [
+      phone,
+      phoneError,
+      phoneIsTouched,
+      message,
+      messageError,
+      messageIsTouched,
+      email,
+      emailError,
+      emailIsTouched,
+      name,
+      nameError,
+      nameIsTouched,
+      handleMessageInput,
+      handleEmailInput,
+      handleNameInput,
+      handlePhoneInput,
+    ]
+  );
 
   const handleSubmit = function (event) {
     event.preventDefault();
@@ -37,57 +132,12 @@ function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        type="name"
-        name="name"
-        id="name"
-        placeholder="Name"
-        value={name}
-        onChange={handleNameInput}
-        onBlur={handleNameInput}
-      />
-      {nameIsTouched && nameError && (
-        <p style={{ color: "red" }}>{nameError}</p>
-      )}
-      <input
-        type="email"
-        name="email"
-        id="email"
-        placeholder="Email Address"
-        value={email}
-        onChange={handleEmailInput}
-        onBlur={handleEmailInput}
-      />
-      {emailIsTouched && emailError && (
-        <p style={{ color: "red" }}>{emailError}</p>
-      )}
-      <input
-        type="tel"
-        name="phone"
-        id="phone"
-        placeholder="Phone"
-        value={phone}
-        onChange={handlePhoneInput}
-        onBlur={handlePhoneInput}
-      />
-      {phoneIsTouched && phoneError && (
-        <p style={{ color: "red" }}>{phoneError}</p>
-      )}
-      <textarea
-        placeholder="Your Message"
-        maxLength="200"
-        rows="5"
-        cols="30"
-        name="message"
-        id="message"
-        value={message}
-        onChange={handleMessageInput}
-        onBlur={handleMessageInput}
-      ></textarea>
-      {messageIsTouched && messageError && (
-        <p style={{ color: "red" }}>{messageError}</p>
-      )}
-      <button type="submit">submit</button>
+      {inputFields.map((field) => {
+        return <InputElement key={field.id} {...field} />;
+      })}
+      <ButtonController>
+        <Button type="submit">submit</Button>
+      </ButtonController>
     </form>
   );
 }

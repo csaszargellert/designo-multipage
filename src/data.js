@@ -141,3 +141,21 @@ export const designData = [
     ],
   },
 ];
+
+export const countryData = [
+  {
+    id: 1,
+    countryName: "Canada",
+    image: "/assets/shared/desktop/illustration-canada.svg",
+  },
+  {
+    id: 2,
+    countryName: "Australia",
+    image: "/assets/shared/desktop/illustration-australia.svg",
+  },
+  {
+    id: 3,
+    countryName: "United Kingdom",
+    image: "/assets/shared/desktop/illustration-united-kingdom.svg",
+  },
+];
