@@ -8,6 +8,7 @@ import LocationsPage from "./pages/LocationsPage.jsx";
 import Contact from "./pages/Contact.jsx";
 import DesignPage from "./pages/DesignPage.jsx";
 import Home, { loader as HomeLoader } from "./pages/Home.jsx";
+import HamburgerContextProvider from "./reducer/HamburgerReducer.jsx";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -44,7 +45,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <GlobalStyles />
-    <RouterProvider router={router} />
+    <HamburgerContextProvider>
+      <GlobalStyles />
+      <RouterProvider router={router} />
+    </HamburgerContextProvider>
   </React.StrictMode>
 );

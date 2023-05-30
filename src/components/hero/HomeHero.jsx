@@ -1,36 +1,37 @@
 import styled from "styled-components";
-import StyledContainer from "../../styles/StyledContainer";
 
 const Hero = styled.section`
-  --padding: 9.4rem;
-
   background-color: var(--peach);
   background-image: url("/assets/home/desktop/bg-pattern-hero-home.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center right;
 
-  padding: 14rem var(--padding);
+  padding-left: 9.4rem;
   border-radius: var(--border-radius);
   color: var(--white);
 
   overflow: hidden;
-  position: relative;
+  display: flex;
+  justify-content: space-between;
 
-  margin-bottom: 10rem;
+  margin: 0 auto 10rem;
+  width: 110rem;
 
   .content-container {
-    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
   }
 
   .image-container {
-    position: absolute;
-    right: -9rem;
-    bottom: -25rem;
+    height: 64rem;
+    width: 54%;
   }
 
   img {
-    display: inline-block;
+    display: flex;
   }
 
   h2 {
@@ -38,11 +39,63 @@ const Hero = styled.section`
     font-size: 4.8rem;
     line-height: 1;
     margin-bottom: 2rem;
+    width: 120%;
   }
 
   p {
     margin-bottom: 4rem;
-    width: 80%;
+    width: 90%;
+  }
+
+  @media (max-width: 75em) {
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+    padding: 6rem 9.4rem 0;
+
+    h2 {
+      width: 100%;
+    }
+
+    .content-container {
+      width: 85%;
+      text-align: center;
+      align-items: center;
+      margin-bottom: -10rem;
+    }
+
+    .image-container {
+      height: auto;
+      width: auto;
+      pointer-events: none;
+      margin-bottom: -34.5rem;
+    }
+  }
+
+  @media (max-width: 62.5em) {
+    .content-container {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 46.875em) {
+    padding: 8rem 0 0;
+    width: 100%;
+    border-radius: 0;
+
+    .content-container {
+      width: 90%;
+    }
+  }
+
+  @media (max-width: 34.375em) {
+    h2 {
+      font-size: 3.2rem;
+    }
+
+    p {
+      width: 100%;
+    }
   }
 `;
 
@@ -74,25 +127,23 @@ const Button = styled.button`
 
 function HomeHero({ onHandleScroll }) {
   return (
-    <StyledContainer>
-      <Hero>
-        <div className="content-container">
-          <h2>Award-winning custom designs and digital branding solutions</h2>
-          <p>
-            With over 10 years in the industry, we are experienced in creating
-            fully responsive websites, app design, and engaging brand
-            experiences. Find out more about our services.
-          </p>
-          <Button onClick={onHandleScroll}>learn more</Button>
-        </div>
-        <div className="image-container">
-          <img
-            src="/assets/home/desktop/image-hero-phone.png"
-            alt="Picture of a phone"
-          />
-        </div>
-      </Hero>
-    </StyledContainer>
+    <Hero>
+      <div className="content-container">
+        <h2>Award-winning custom designs and digital branding solutions</h2>
+        <p>
+          With over 10 years in the industry, we are experienced in creating
+          fully responsive websites, app design, and engaging brand experiences.
+          Find out more about our services.
+        </p>
+        <Button onClick={onHandleScroll}>learn more</Button>
+      </div>
+      <div className="image-container">
+        <img
+          src="/assets/home/desktop/image-hero-phone.png"
+          alt="Picture of a phone"
+        />
+      </div>
+    </Hero>
   );
 }
 

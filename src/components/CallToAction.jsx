@@ -18,7 +18,7 @@ const CTASection = styled.section`
   left: 50%;
   transform: translate(-50%, -75%);
 
-  width: var(--width);
+  width: 110rem;
 
   h3 {
     font-weight: 500;
@@ -51,6 +51,42 @@ const CTASection = styled.section`
   a:active {
     color: var(--white);
     background-color: var(--light-peach);
+  }
+
+  @media (max-width: 75em) {
+    width: 90%;
+  }
+
+  @media (max-width: 62.5em) {
+    flex-direction: column;
+    gap: 3.6rem;
+
+    div {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h3 {
+      margin-bottom: 1.8rem;
+    }
+  }
+
+  @media (max-width: 46.875em) {
+    transform: translate(-50%, -50%);
+
+    h3 {
+      width: 100%;
+    }
+
+    p {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 31.5625em) {
+    padding: 6.4rem 2.4rem;
   }
 `;
 

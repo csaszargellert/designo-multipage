@@ -4,6 +4,14 @@ import { MapContainer, TileLayer, Marker } from "react-leaflet";
 const Container = styled.div`
   display: flex;
   gap: 3rem;
+
+  @media (max-width: 62.5em) {
+    flex-direction: column;
+  }
+
+  @media (max-width: 46.875em) {
+    gap: 0;
+  }
 `;
 
 const Detail = styled.div`
@@ -39,6 +47,42 @@ const Detail = styled.div`
     font-weight: 700;
     font-size: 1.6rem;
   }
+
+  @media (max-width: 75em) {
+    padding: 0 6.4rem;
+
+    .detail-container {
+      gap: 4.8rem;
+    }
+  }
+
+  @media (max-width: 62.5em) {
+    padding: 8.8rem 6.4rem;
+  }
+
+  @media (max-width: 46.875em) {
+    border-radius: 0;
+    align-items: center;
+
+    .detail-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 31.5625em) {
+    padding: 8rem 0;
+
+    h2 {
+      font-size: 3.2rem;
+      text-align: center;
+      width: 90%;
+    }
+
+    .detail-container {
+      width: 90%;
+    }
+  }
 `;
 
 const Map = styled(MapContainer)`
@@ -54,6 +98,14 @@ const Map = styled(MapContainer)`
       `
     );
   }}
+
+  @media (max-width: 62.5em) {
+    width: 100%;
+    order: -1;
+  }
+  @media (max-width: 46.875em) {
+    border-radius: 0;
+  }
 `;
 
 function LocationElement({ id, address, contact, countryName }) {
@@ -87,7 +139,13 @@ function LocationElement({ id, address, contact, countryName }) {
           </div>
         </div>
       </Detail>
-      <Map center={[lat, lng]} zoom={12} zoomControl={false} $id={id}>
+      <Map
+        center={[lat, lng]}
+        zoom={12}
+        zoomControl={false}
+        scrollWheelZoom={false}
+        $id={id}
+      >
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
         <Marker position={[lat, lng]}></Marker>
       </Map>

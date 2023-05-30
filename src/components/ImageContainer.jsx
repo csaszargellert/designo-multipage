@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 const ImageContainer = styled.div`
-  margin-bottom: 4.8rem;
+  margin-bottom: 3.2rem;
   display: grid;
   place-items: center;
 

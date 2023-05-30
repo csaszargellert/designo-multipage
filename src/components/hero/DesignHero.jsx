@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 const Hero = styled.section`
-  padding: 6.4rem 19rem;
-  width: var(--width);
+  padding: 6.4rem;
+  width: 110rem;
   margin: 0 auto 16rem;
   border-radius: var(--border-radius);
 
@@ -30,6 +30,30 @@ const Hero = styled.section`
 
   p {
     width: 40ch;
+  }
+
+  @media (max-width: 75em) {
+    width: 90%;
+  }
+
+  @media (max-width: 46.875em) {
+    width: 100%;
+    border-radius: 0;
+    margin-bottom: 12rem;
+  }
+
+  @media (max-width: 31.5625em) {
+    padding: 9rem 0;
+    gap: 2.4rem;
+
+    h1 {
+      width: 90%;
+      font-size: 3.2rem;
+    }
+
+    p {
+      width: 90%;
+    }
   }
 `;
 

@@ -17,10 +17,19 @@ const LinkButton = styled(Link)`
       return css`
         grid-column: 1 / 2;
         grid-row: 1 / -1;
+
+        @media (max-width: 62.5em) {
+          grid-column: 1;
+          grid-row: 1;
+        }
       `;
     } else if (props.$page === "home") {
       return css`
         grid-column: 2 / 3;
+
+        @media (max-width: 62.5em) {
+          grid-column: 1;
+        }
       `;
     }
   }}
@@ -58,6 +67,12 @@ const LinkButton = styled(Link)`
   }
   span:nth-child(2) {
     letter-spacing: 5px;
+  }
+
+  @media (max-width: 32.5625em) {
+    span:nth-child(1) {
+      font-size: 2.8rem;
+    }
   }
 `;
 

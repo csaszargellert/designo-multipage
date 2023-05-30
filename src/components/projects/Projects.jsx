@@ -6,10 +6,28 @@ const List = styled.ul`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
   gap: 3rem;
+
+  @media (max-width: 46.875em) {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  @media (max-width: 31.5625em) {
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+    gap: 3rem;
+  }
 `;
 
 const Section = styled.section`
   margin-bottom: 16rem;
+
+  @media (max-width: 46.875em) {
+    margin-bottom: 12rem;
+  }
+
+  @media (max-width: 31.5625em) {
+    margin-bottom: 9.6rem;
+  }
 `;
 
 function Projects({ projects }) {

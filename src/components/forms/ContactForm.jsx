@@ -9,9 +9,25 @@ import {
 import InputElement from "./InputElement";
 import styled from "styled-components";
 
+const Form = styled.form`
+  width: 70%;
+
+  @media (max-width: 56.25em) {
+    width: 100%;
+  }
+
+  @media (max-width: 31.5625em) {
+    width: 90%;
+  }
+`;
+
 const ButtonController = styled.div`
   display: flex;
   justify-content: flex-end;
+
+  @media (max-width: 31.5625em) {
+    justify-content: center;
+  }
 `;
 
 const Button = styled.button`
@@ -131,14 +147,14 @@ function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit}>
       {inputFields.map((field) => {
         return <InputElement key={field.id} {...field} />;
       })}
       <ButtonController>
         <Button type="submit">submit</Button>
       </ButtonController>
-    </form>
+    </Form>
   );
 }
 

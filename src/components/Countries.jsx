@@ -12,6 +12,13 @@ const CountrySection = styled.section`
     justify-content: space-around;
     gap: 1.6rem;
   }
+
+  @media (max-width: 56.25em) {
+    ul {
+      flex-direction: column;
+      gap: 8rem;
+    }
+  }
 `;
 
 function Countries() {

@@ -11,11 +11,30 @@ const HomePageDesign = styled.section`
     grid-template-rows: 30rem 30rem;
     gap: 2.4rem;
   }
+
+  @media (max-width: 62.5em) {
+    margin-bottom: ${(props) => (props.$margin ? "38rem" : "12rem")};
+
+    .design-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, 30rem);
+    }
+  }
+
+  @media (max-width: 31.5625em) {
+    margin-bottom: ${(props) => (props.$margin ? "28.6rem" : "12rem")};
+  }
 `;
 
 const DesignPageSection = styled(HomePageDesign)`
   .design-container {
     grid-template-rows: 30rem;
+  }
+
+  @media (max-width: 62.5em) {
+    .design-container {
+      grid-template-rows: 30rem 30rem;
+    }
   }
 `;
 

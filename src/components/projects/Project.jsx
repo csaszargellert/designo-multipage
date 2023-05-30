@@ -39,6 +39,41 @@ const ListItem = styled.li`
     margin-bottom: 1.6rem;
     text-transform: uppercase;
   }
+
+  @media (max-width: 46.875em) {
+    figure {
+      display: flex;
+    }
+
+    figcaption {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .image-container {
+      height: 32rem;
+      width: 50%;
+    }
+  }
+
+  @media (max-width: 31.5625em) {
+    figure {
+      display: block;
+    }
+
+    figcaption {
+      width: auto;
+      display: block;
+    }
+
+    .image-container {
+      height: 32rem;
+      width: 100%;
+    }
+  }
 `;
 
 function Project({ name, image, text }) {

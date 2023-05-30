@@ -48,6 +48,13 @@ const StyledInput = styled.div`
     font-style: italic;
     user-select: none;
   }
+
+  @media (max-width: 65.625em) {
+    input,
+    textarea {
+      width: 100%;
+    }
+  }
 `;
 
 function InputElement({
