@@ -13,11 +13,12 @@ const CTASection = styled.section`
   background-position: center right;
   border-radius: var(--border-radius);
 
-  grid-column: 1 / 1;
-  grid-row: 1 / 1;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -75%);
 
   width: var(--width);
-  transform: translate(19%, -95%);
 
   h3 {
     font-weight: 500;

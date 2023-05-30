@@ -76,7 +76,9 @@ function Design({ name, image, page }) {
   return (
     <LinkButton to={`/design/${name}`} $page={page} $bg={source}>
       <span>{text}</span>
-      <span>view projects</span>
+      <span>
+        view projects <img src="/assets/shared/desktop/icon-right-arrow.svg" />
+      </span>
       <Overlay />
     </LinkButton>
   );

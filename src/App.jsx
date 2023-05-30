@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import CallToAction from "./components/CallToAction";
@@ -12,11 +12,17 @@ const Div = styled.div`
   grid-template-columns: 1fr;
   align-items: center;
   justify-content: center;
+
+  position: relative;
 `;
 
 function App() {
-  const location = useLocation();
-  const page = location.pathname.slice(1);
+  const { pathname } = useLocation();
+  const page = pathname.slice(1);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
     <React.Fragment>

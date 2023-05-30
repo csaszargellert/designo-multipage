@@ -147,15 +147,63 @@ export const countryData = [
     id: 1,
     countryName: "Canada",
     image: "/assets/shared/desktop/illustration-canada.svg",
+    address: {
+      street: {
+        name: "Wellington Street",
+        number: 3886,
+      },
+      city: "Toronto, Ontario",
+      zip: "M9C 3J5",
+      location: {
+        lat: 43.64349202235902,
+        lng: -79.39434568022902,
+      },
+    },
+    contact: {
+      phone: "+1 253-863-8967",
+      email: "contact@designo.co",
+    },
   },
   {
     id: 2,
     countryName: "Australia",
     image: "/assets/shared/desktop/illustration-australia.svg",
+    address: {
+      street: {
+        name: "Balonne Street",
+        number: 19,
+      },
+      city: "New South Wales",
+      zip: "2443",
+      location: {
+        lat: -33.111781,
+        lng: 151.617643,
+      },
+    },
+    contact: {
+      phone: "(02) 6720 9092",
+      email: "contact@designo.au",
+    },
   },
   {
     id: 3,
     countryName: "United Kingdom",
     image: "/assets/shared/desktop/illustration-united-kingdom.svg",
+    address: {
+      street: {
+        name: "Colorado Way",
+        number: 13,
+      },
+      city: "Rhyd-y-fro",
+      zip: "SA8 9GA",
+      location: {
+        lng: -3.8637453063569027,
+        lat: 51.73137971526604,
+      },
+    },
+    contact: {
+      phone: "078 3115 1400",
+      email: "contact@designo.uk",
+    },
   },
 ];
